@@ -32,7 +32,8 @@ import java.util.HashMap;
 
 public class ScrollingActivity extends AppCompatActivity {
     private HashMap<String, Boolean> med_history = new HashMap();
-    private LinearLayout LL;
+    private HashMap<String, Boolean> sounds = new HashMap();
+    private LinearLayout LL, soundsLL;
     private TextView DisplayDate;
     private DatePickerDialog datePicker;
     private String date;
@@ -102,6 +103,33 @@ public class ScrollingActivity extends AppCompatActivity {
         EditText address = findViewById(R.id.et_address);
         EditText occupation = findViewById(R.id.et_occupation);
 
+        EditText surgeriesPast5Years = findViewById(R.id.et_surgeries);
+        EditText complaintPatientWords  = findViewById(R.id.et_complaint);
+        EditText medLineDevOpening = findViewById(R.id.et_deviation);
+        EditText mouthOpening = findViewById(R.id.et_mouth_opening);
+        EditText symmetryOfTheFace = findViewById(R.id.et_symmetry);
+        EditText lateralMandibularMove = findViewById(R.id.et_lateral_man);
+        EditText musclesOfMastication = findViewById(R.id.et_muscles_of_mastication);
+        EditText lymphNodes = findViewById(R.id.et_lymph_nodes);
+
+        EditText toothLossCauses = findViewById(R.id.et_tooth_loss);
+        EditText mucosaInEdentulousArea = findViewById(R.id.et_mucosa);
+        EditText tongue = findViewById(R.id.et_tongue);
+        EditText badHabits = findViewById(R.id.et_bad_habits);
+        EditText oralHygiene = findViewById(R.id.et_oral_hygiene);
+
+        EditText extraOralXrays = findViewById(R.id.et_extraoral_rays);
+        EditText intraOralXrays = findViewById(R.id.et_intraoral_rays);
+
+        EditText fullTreatmentPlane = findViewById(R.id.et_full_treatment);
+        EditText upperRightQuadrant = findViewById(R.id.et_upper_right_q);
+        EditText upperLeftQuadrant = findViewById(R.id.et_upper_left_q);
+        EditText lowerRightQuadrant = findViewById(R.id.et_lower_right_q);
+        EditText lowerLeftQuadrant = findViewById(R.id.et_lower_left_q);
+
+
+
+
         int selectedId = ((RadioGroup)findViewById(R.id.rg_sex)).getCheckedRadioButtonId();
         RadioButton genderButton = findViewById(selectedId);
         String gender = genderButton.getText().toString();
@@ -110,6 +138,10 @@ public class ScrollingActivity extends AppCompatActivity {
         RadioButton occlusionButton = findViewById(selectedId);
         String occlusionType = occlusionButton.getText().toString();
 
+        selectedId = ((RadioGroup)findViewById(R.id.rg_lip_line)).getCheckedRadioButtonId();
+        RadioButton lipLineButton = findViewById(selectedId);
+        String lipLineType = occlusionButton.getText().toString();
+
         for(int i = 0; i < LL.getChildCount(); i++) {
 
             med_history.put((((CheckBox)LL.getChildAt(i)).getText()).toString(),
@@ -117,6 +149,19 @@ public class ScrollingActivity extends AppCompatActivity {
 
         }
 
-        Log.d("hi bitch", occlusionType);
+        for(int i = 0; i < soundsLL.getChildCount(); i++) {
+
+            sounds.put((((CheckBox)soundsLL.getChildAt(i)).getText()).toString(),
+                    ((CheckBox)soundsLL.getChildAt(i)).isChecked());
+
+        }
+
+        Patient patient = new Patient(name.toString(),occupation.toString(),address.toString(),telephone.toString(),gender.toString(),date,
+                occlusionType,lipLineType,surgeriesPast5Years.toString(),complaintPatientWords.toString(),medLineDevOpening.toString(),mouthOpening.toString()
+                ,symmetryOfTheFace.toString(),lateralMandibularMove.toString(),musclesOfMastication.toString(),lymphNodes.toString(),toothLossCauses.toString(),
+                mucosaInEdentulousArea.toString(),tongue.toString(),badHabits.toString(),oralHygiene.toString(),extraOralXrays.toString(),intraOralXrays.toString(),
+                fullTreatmentPlane.toString(),upperRightQuadrant.toString(),upperLeftQuadrant.toString(), lowerRightQuadrant.toString(), lowerRightQuadrant.toString(),
+                med_history,sounds);
+
     }
 }

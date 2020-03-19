@@ -277,17 +277,23 @@
             android:textColorLink="@color/cardview_dark_background"
             android:text="@string/tmj"
             />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sounds"
+            android:orientation="vertical">
+            <CheckBox
+                android:id="@+id/clickingsound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clicking Sound" />
+            <CheckBox
+                android:id="@+id/crepitatingsound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Crepitating Sound" />
+        </LinearLayout>
 
-        <CheckBox
-            android:id="@+id/clickingsound"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Clicking Sound" />
-        <CheckBox
-            android:id="@+id/crepitatingsound"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Crepitating Sound" />
 
         <EditText
             android:layout_width="match_parent"
@@ -361,7 +367,8 @@
                 android:id="@+id/rb_low"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Low" />
+                android:text="Low"
+                android:checked="true"/>
 
             <RadioButton
                 android:id="@+id/rb_high"
