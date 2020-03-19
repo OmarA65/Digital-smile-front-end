@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Diagnostic chart</string>
+    <string name="casehistory">
+        <b>A-<u>Case History:</u></b>
+    </string>
+    <string name="examination">
+        <b>B-<u>Examinations:</u></b>
+    </string>
+
+    <string name="dateOfBirth">Date of birth</string>
+
+    <string name="generalhistory">
+        <b>1)<u>General History:</u></b>
+    </string>
+    <string name="medicalhistory">
+        <b>2)<u>Medical History:</u></b>
+    </string>
+    <string name="dentalhistory">
+        <b>3)<u>Dental History:</u></b>
+    </string>
+
+    <!-- ====================================================================================-->
+
+    <string name="extraoral">
+        <b>1)<u>Extra-Oral Examination:</u></b>
+    </string>
+    <string name="intraoral">
+        <b>2)<u>Intra-Oral Examination:</u></b>
+    </string>
+    <string name="radiographic">
+        <b>3)<u>Radiographic Examination:</u></b>
+    </string>
+    <string name="fulltreatmentplan">
+        <b>4)<u>Full Treatment Plan:</u></b>
+    </string>
+
+
+
+
+    <!-- ====================================================================================-->
+
+    <string name="sex">
+        Sex
+    </string>
+    <string name="atpresent">
+        At Present:
+    </string>
+    <string name="tmj">
+        TMJ:
+    </string>
+    <string name="lipline">
+        Lip Line:
+    </string>
+    <string name="typeofocclusion">
+        Type of Occlusion:
+    </string>
+    <string name="colorchart">
+        Color Chart:
+    </string>
+    <string name="abutments">
+        Abutments:
+    </string>
+
+    <string name="action_settings">Settings</string>
+</resources>
