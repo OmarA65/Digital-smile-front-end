@@ -1,6 +1,7 @@
 package com.example.from;
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -12,12 +13,16 @@ import android.view.Display;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.CheckBox;
@@ -37,6 +42,7 @@ public class ScrollingActivity extends AppCompatActivity {
     private TextView DisplayDate;
     private DatePickerDialog datePicker;
     private String date;
+    private String biteType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,55 @@ public class ScrollingActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final Spinner biteTypeSpinner = (Spinner)findViewById(R.id.type_of_bite);
+
+        ArrayAdapter myAdapter = new ArrayAdapter<String>(ScrollingActivity.this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Bitetype)){
+            @Override
+            public boolean isEnabled(int position){
+
+                if(position == 0)
+                {
+
+                    // Disable the first item from Spinner
+                    // First item will be use for hint
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            @Override
+            public View getDropDownView(int position, View convertView,
+                                        ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView tv = (TextView) view;
+                if(position == 0){
+                    // Set the hint text color gray
+                    tv.setTextColor(Color.GRAY);
+                }
+                else {
+                    tv.setTextColor(Color.BLACK);
+                }
+                return view;
+            }
+        };
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        biteTypeSpinner.setAdapter(myAdapter);
+
+        biteTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                biteType = (String) parent.getItemAtPosition(position);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         LL = findViewById(R.id.med_history_checkboxes);
 
         Calendar cal = Calendar.getInstance();
@@ -156,11 +211,11 @@ public class ScrollingActivity extends AppCompatActivity {
 
         }
 
-        Patient patient = new Patient(name.toString(),occupation.toString(),address.toString(),telephone.toString(),gender.toString(),date,
-                occlusionType,lipLineType,surgeriesPast5Years.toString(),complaintPatientWords.toString(),medLineDevOpening.toString(),mouthOpening.toString()
+        Patient patient = new Patient(name.toString(),occupation.toString(),address.toString(),telephone.toString(),gender,date,
+                occlusionType,biteType,lipLineType,surgeriesPast5Years.toString(),complaintPatientWords.toString(),medLineDevOpening.toString(),mouthOpening.toString()
                 ,symmetryOfTheFace.toString(),lateralMandibularMove.toString(),musclesOfMastication.toString(),lymphNodes.toString(),toothLossCauses.toString(),
                 mucosaInEdentulousArea.toString(),tongue.toString(),badHabits.toString(),oralHygiene.toString(),extraOralXrays.toString(),intraOralXrays.toString(),
-                fullTreatmentPlane.toString(),upperRightQuadrant.toString(),upperLeftQuadrant.toString(), lowerRightQuadrant.toString(), lowerRightQuadrant.toString(),
+                fullTreatmentPlane.toString(),upperRightQuadrant.toString(),upperLeftQuadrant.toString(), lowerRightQuadrant.toString(), lowerLeftQuadrant.toString(),
                 med_history,sounds);
 
     }

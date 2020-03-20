@@ -198,8 +198,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Haemophilia" />
-
-
     <CheckBox
         android:id="@+id/blood_transfusion"
         android:layout_width="match_parent"
@@ -377,15 +375,15 @@
                 android:text="High" />
 
         </RadioGroup>
-
-        <EditText
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_type_of_bite"
-            android:hint="Type of Bite:"
-            android:padding="10dp"
-            android:inputType="text"
-            android:background="@android:color/white"/>
+            android:hint="Bite type"
+            android:id="@+id/type_of_bite"
+            android:background="@android:color/white"
+            >
+
+        </Spinner>
 
         <EditText
             android:layout_width="match_parent"
@@ -1174,8 +1172,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:textColor="#ffffff"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_margin="16dp"
             android:text="Submit"
             android:onClick="submitInfo"
             ></Button>

@@ -33,9 +33,21 @@
     <string name="fulltreatmentplan">
         <b>4)<u>Full Treatment Plan:</u></b>
     </string>
+    
+    <string-array name="Bitetype">
+        <item>Bite Type</item>
+        <item>Overcrowding</item>
+        <item>Overjet</item>
+        <item>Overbite</item>
+        <item>Crossbite</item>
+        <item>Openbite</item>
+        <item>Anterior crossbite (Underbite)</item>
+        <item>Spacing</item>
+        <item>Diastema</item>
+        <item>Impacted tooth</item>
+        <item>Missing tooth</item>
 
-
-
+    </string-array>
 
     <!-- ====================================================================================-->
 

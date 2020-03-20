@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class Patient{
 
-    String name,occupation, address, telephone,gender, dateOfBirth, occlusionType, lipLineType;
+    String name,occupation, address, telephone,gender, dateOfBirth, occlusionType,biteType, lipLineType;
     String surgeriesPast5Years, complaintPatientWords, medLineDevOpening,mouthOpening,symmetryOfTheFace, lateralMandibularMove,musclesOfMastication, lymphNodes;
     String toothLossCauses, mucosaInEdentulousArea, tongue, badHabits, oralHygiene;
     String extraOralXrays, intraOralXrays;
@@ -18,7 +18,7 @@ public class Patient{
     HashMap<String, Boolean> med_history = new HashMap();
     HashMap<String, Boolean> sounds = new HashMap();
 
-    public Patient(String name, String occupation, String address, String telephone, String gender, String dateOfBirth, String occlusionType, String lipLineType, String surgeriesPast5Years, String complaintPatientWords, String medLineDevOpening, String mouthOpening, String symmetryOfTheFace, String lateralMandibularMove, String musclesOfMastication, String lymphNodes, String toothLossCauses, String mucosaInEdentulousArea, String tongue, String badHabits, String oralHygiene, String extraOralXrays, String intraOralXrays, String fullTreatmentPlan, String upperRightQuadrant, String upperLeftQuadrant, String lowerRightQuadrant, String lowerLeftQuadrant, HashMap<String, Boolean> med_history, HashMap<String, Boolean> sounds) {
+    public Patient(String name, String occupation, String address, String telephone, String gender, String dateOfBirth, String occlusionType, String biteType, String lipLineType, String surgeriesPast5Years, String complaintPatientWords, String medLineDevOpening, String mouthOpening, String symmetryOfTheFace, String lateralMandibularMove, String musclesOfMastication, String lymphNodes, String toothLossCauses, String mucosaInEdentulousArea, String tongue, String badHabits, String oralHygiene, String extraOralXrays, String intraOralXrays, String fullTreatmentPlan, String upperRightQuadrant, String upperLeftQuadrant, String lowerRightQuadrant, String lowerLeftQuadrant, HashMap<String, Boolean> med_history, HashMap<String, Boolean> sounds) {
         this.name = name;
         this.occupation = occupation;
         this.address = address;
@@ -26,6 +26,7 @@ public class Patient{
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
         this.occlusionType = occlusionType;
+        this.biteType = biteType;
         this.lipLineType = lipLineType;
         this.surgeriesPast5Years = surgeriesPast5Years;
         this.complaintPatientWords = complaintPatientWords;
